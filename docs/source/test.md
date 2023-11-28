@@ -1,3 +1,1 @@
 ## Hello from markdown
-
-Кирилица...
