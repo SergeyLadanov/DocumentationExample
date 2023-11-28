@@ -25,14 +25,14 @@ jobs:
     - name: Install enviroment
       run: pip install -e .
 
-    - name: Install pdf generator
-      run: sudo apt-get update && sudo apt-get install texmaker gummi texlive texlive-full texlive-latex-recommended latexdraw intltool-debian lacheck lmodern luatex po-debconf tex-common texlive-binaries texlive-extra-utils texlive-latex-base texlive-latex-base-doc texlive-luatex texlive-xetex texlive-lang-cyrillic texlive-fonts-extra texlive-science texlive-latex-extra texlive-pstricks -y
+#    - name: Install pdf generator
+#      run: sudo apt-get update && sudo apt-get install texmaker gummi texlive texlive-full texlive-latex-recommended latexdraw intltool-debian lacheck lmodern luatex po-debconf tex-common texlive-binaries texlive-extra-utils texlive-latex-base texlive-latex-base-doc texlive-luatex texlive-xetex texlive-lang-cyrillic texlive-fonts-extra texlive-science texlive-latex-extra texlive-pstricks -y
       
     - name: Build docs
       run: make --directory docs html
         
-    - name: Build pdf
-      run: make --directory docs latexpdf
+#    - name: Build pdf
+#      run: make --directory docs latexpdf
 
     - name: Archive UserReleaseNotes 
       uses: actions/upload-artifact@v3
