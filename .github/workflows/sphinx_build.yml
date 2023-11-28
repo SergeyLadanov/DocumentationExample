@@ -20,15 +20,14 @@ jobs:
     - name: Installing sphinx packages
       run: pip install -r requirements.txt
 
-    - name: Install dependencies
+    - name: Install dependencies for docs
       run: pip install -r docs/requirements.txt
 
-    - name: Test
+    - name: Install enviroment
       run: pip install -e .
 
     - name: Install pdf generator
       run: sudo apt-get update && sudo apt-get install texmaker gummi texlive texlive-full texlive-latex-recommended latexdraw intltool-debian lacheck lmodern luatex po-debconf tex-common texlive-binaries texlive-extra-utils texlive-latex-base texlive-latex-base-doc texlive-luatex texlive-xetex texlive-lang-cyrillic texlive-fonts-extra texlive-science texlive-latex-extra texlive-pstricks -y
-#      run: sudo apt-get update && sudo apt-get install texlive texlive-lang-cyrillic latexmk -y
       
     - name: Build docs
       run: make --directory docs html
