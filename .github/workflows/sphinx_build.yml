@@ -17,8 +17,8 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Installing esptool
-      run: pip install sphinx
+    - name: Installing sphinx packages
+      run: pip install -r requirements.txt
 
     - name: Install dependencies
       run: pip install -r docs/requirements.txt
