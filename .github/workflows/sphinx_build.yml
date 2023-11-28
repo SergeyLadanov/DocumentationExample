@@ -25,7 +25,8 @@ jobs:
 
 
     - name: Build docs
-      run: cd docs && make html
+      run: make --directory docs
+      #run: cd docs && make html
         
 
 
