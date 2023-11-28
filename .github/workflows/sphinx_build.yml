@@ -23,7 +23,12 @@ jobs:
     - name: Install dependencies
       run: pip install -r docs/requirements.txt
 
+    - name: Test
+      run: pip install -e .
 
+    - name: Install pdf generator
+      run: apt-get update && apt-get install texlive texlive-lang-cyrillic -y
+      
     - name: Build docs
       run: make --directory docs html
       #run: cd docs && make html
