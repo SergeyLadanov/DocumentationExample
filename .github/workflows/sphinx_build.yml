@@ -27,7 +27,7 @@ jobs:
       run: pip install -e .
 
     - name: Install pdf generator
-      run: sudo apt-get update && sudo apt-get install texlive texlive-lang-cyrillic -y
+      run: sudo apt-get update && sudo apt-get install texlive texlive-lang-cyrillic latexmk -y
       
     - name: Build docs
       run: make --directory docs html
