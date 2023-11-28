@@ -12,20 +12,34 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-
-    - uses: ammaraskar/sphinx-action@master
+    - uses: actions/setup-python@v3
       with:
-        build-command: "sphinx-build -b html docsrc/ _build -f /tmp/sphinx.log "
-        docs-folder: "docs/"
-        
+        python-version: '3.9'
 
+    - name: Installing sphinx packages
+      run: pip install -r requirements.txt
+
+    - name: Install dependencies for docs
+      run: pip install -r docs/requirements.txt
+
+    - name: Install enviroment
+      run: pip install -e .
+
+#    - name: Install pdf generator
+#      run: sudo apt-get update && sudo apt-get install texmaker gummi texlive texlive-full texlive-latex-recommended latexdraw intltool-debian lacheck lmodern luatex po-debconf tex-common texlive-binaries texlive-extra-utils texlive-latex-base texlive-latex-base-doc texlive-luatex texlive-xetex texlive-lang-cyrillic texlive-fonts-extra texlive-science texlive-latex-extra texlive-pstricks -y
+      
+    - name: Build docs
+      run: make --directory docs html
+        
+#    - name: Build pdf
+#      run: make --directory docs latexpdf
 
     - name: Archive UserReleaseNotes 
       uses: actions/upload-artifact@v3
       with:
         name: Docs_Output
         path: |
-          docs/build/html
+          docs/build
 
 
     
