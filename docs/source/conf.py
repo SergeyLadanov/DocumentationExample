@@ -1,5 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
 
+# import version as ver
+
+
 # -- Project information
 
 project = 'Lumache'
@@ -8,6 +11,8 @@ author = 'Graziella'
 
 release = '0.1'
 version = '0.1.0'
+
+# version = ver.value
 
 # -- General configuration
 
