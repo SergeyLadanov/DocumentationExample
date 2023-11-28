@@ -1,5 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
 
+# import version as ver
+
+
 # -- Project information
 
 project = 'Lumache'
@@ -8,6 +11,8 @@ author = 'Graziella'
 
 release = '0.1'
 version = '0.1.0'
+
+# version = ver.value
 
 # -- General configuration
 
@@ -40,3 +45,17 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+
+
+
+
+latex_elements = {
+    # Additional stuff for the LaTeX preamble.
+    'preamble': '\\usepackage[utf8]{inputenc}',
+    'babel': '\\usepackage[russian]{babel}',
+    'cmappkg': '\\usepackage{cmap}',
+    # 'fontenc': '\\usepackage[T1,T2A]{fontenc}',
+    'utf8extra':'\\DeclareUnicodeCharacter{00A0}{\\nobreakspace}',
+}
+
+
