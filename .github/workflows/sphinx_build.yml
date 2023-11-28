@@ -31,16 +31,16 @@ jobs:
       
     - name: Build docs
       run: make --directory docs html
-      #run: cd docs && make html
         
-
+    - name: Build pdf
+      run: make --directory docs latexpdf
 
     - name: Archive UserReleaseNotes 
       uses: actions/upload-artifact@v3
       with:
         name: Docs_Output
         path: |
-          docs/build/html
+          docs/build
 
 
     
