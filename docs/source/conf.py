@@ -1,6 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
 
-# import version as ver
+import lumache as target_app
 
 
 # -- Project information
@@ -9,10 +9,11 @@ project = 'Lumache'
 copyright = '2021, Graziella'
 author = 'Graziella'
 
-release = '0.1'
-version = '0.1.0'
+release = target_app.__version__
+version = target_app.__version__
 
-# version = ver.value
+# release = '0.1'
+# version = '0.1.0'
 
 # -- General configuration
 

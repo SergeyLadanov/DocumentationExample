@@ -1,10 +1,8 @@
 name: "Build docs"
 on:
   push:
-    branches: '*'
-  pull_request:
-    branches: '*'
-  workflow_call:
+    tags:
+    - '*'
 
 jobs:
   docs:
@@ -15,6 +13,10 @@ jobs:
     - uses: actions/setup-python@v3
       with:
         python-version: '3.9'
+
+
+    - name: Insert version
+      run: echo "__version__" "=" '"'$GITHUB_REF_NAME'"' >> lumache.py
 
     - name: Installing sphinx packages
       run: pip install -r requirements.txt
@@ -34,12 +36,42 @@ jobs:
     - name: Build pdf
       run: make --directory docs latexpdf
 
-    - name: Archive UserReleaseNotes 
+    - name: Save build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: Docs_Output
         path: |
           docs/build
+
+
+    - name: Move html files
+      run: mv docs/build/html lumache_html
+
+    - name: ZIP files
+      uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        path: 'lumache_html' 
+
+
+
+    - name: Upload html to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: release.zip
+        asset_name: Lumache_HtmlDoc_$tag.zip
+        tag: ${{ github.ref }}
+
+
+    - name: Upload pdf to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: docs/build/latex/lumache.pdf
+        asset_name: Lumache_Doc_$tag.pdf
+        tag: ${{ github.ref }}
 
 
     
