@@ -15,7 +15,7 @@ jobs:
         python-version: '3.9'
 
 
-    - name: Insert firmware version
+    - name: Insert version
       run: echo "__version__" "=" '"'$GITHUB_REF_NAME'"' >> lumache.py
 
     - name: Installing sphinx packages
