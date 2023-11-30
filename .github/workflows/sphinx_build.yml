@@ -69,7 +69,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: docs/build/latex/lumache_html.pdf
+        file: docs/build/latex/lumache.pdf
         asset_name: Lumache_Doc_$tag.pdf
         tag: ${{ github.ref }}
 
