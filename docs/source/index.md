@@ -1,4 +1,4 @@
-## Welcome to Lumache's documentation!
+# Welcome to Lumache's documentation!
 
 
 
@@ -11,4 +11,5 @@
    usage
    api
    test
+   cpp_class_test
 ```

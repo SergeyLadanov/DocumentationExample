@@ -21,3 +21,7 @@ pip install -e .
 ```
 sudo apt-get install texlive-lang-cyrillic -y
 ```
+
+### Domains for doxygen documentation (using breathe)
+
+https://breathe.readthedocs.io/en/latest/domains.html

@@ -23,7 +23,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'myst_parser'
+    'myst_parser',
+    'breathe'
 ]
 
 intersphinx_mapping = {
@@ -47,6 +48,10 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+
+breathe_projects = {
+    "Nutshell": "../../doxygen_breathe_example/xml/",
+}
 
 
 
