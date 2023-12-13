@@ -1,0 +1,6 @@
+{% extends "!layout.html" %}
+{%- if current_version %}
+{% set version = current_version.name %}
+{% set release = current_version.name %}
+{% set docstitle = "Sphinx doc example " + current_version.name + " documentation"  %}
+{%- endif %}

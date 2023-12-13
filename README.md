@@ -25,3 +25,18 @@ sudo apt-get install texlive-lang-cyrillic -y
 ### Domains for doxygen documentation (using breathe)
 
 https://breathe.readthedocs.io/en/latest/domains.html
+
+
+### Build docs
+
+Simple:
+
+```
+make --directory docs
+```
+
+Multiversion build:
+
+```
+sphinx-multiversion docs/source build/html
+```

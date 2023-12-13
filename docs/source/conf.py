@@ -24,7 +24,8 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'myst_parser',
-    'breathe'
+    'breathe',
+    'sphinx_multiversion'
 ]
 
 intersphinx_mapping = {
