@@ -43,6 +43,13 @@ html_theme = 'sphinx_rtd_theme'
 
 language = "ru"
 
+# Use numeric image, tables, code block, sections
+# numfig = True
+
+# Set numeric format
+# numfig_format = {'figure': 'Рисунок %s', 'table': 'Таблица %s',
+#                 'code-block': 'Листинг %s', 'section': 'Секция %s'}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
@@ -66,6 +73,7 @@ latex_elements = {
     'cmappkg': '\\usepackage{cmap}',
     # 'fontenc': '\\usepackage[T1,T2A]{fontenc}',
     'utf8extra':'\\DeclareUnicodeCharacter{00A0}{\\nobreakspace}',
+    # 'figure_align': 'H', # For figures placement in pdf 
 }
 
 
